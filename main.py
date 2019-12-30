@@ -88,7 +88,7 @@ def main(data_dir):
                 max_modularity = modularity
                 max_subgraphs = connections
                 file_io.write_communities(data_dir, max_subgraphs)
-    except Exception,err:
+    except Exception as err:
         print(err)
     finally:
         file_betweenness.close()
