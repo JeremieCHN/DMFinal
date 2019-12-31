@@ -4,7 +4,8 @@
 - Python 3.7.4
 - 第三方包
   1. [NetworkX](https://networkx.github.io/) 用来解析数据得到图<br>
-  2. [Matplotlib]() 用来画图<br>
+  2. [Matplotlib](https://matplotlib.org/) NetworkX用来画图的<br>
+  3. [Graphviz](https://graphviz.readthedocs.io/en/stable/) 另一个画图，效果好一点<br>
 ## 算法简介
 &emsp;&emsp;GN算法，即Girvan-Newman 社区划分算法，它属于分裂的层次聚类算法，基本思想是不断删除网络中“介值”最大的边，直到所有边都被删除。目标函数值取得最大值的时候，以当前图的连通分量为社区进行划分。<br>
 - 介值：一条边在最短路径中出现的次数<br>
@@ -28,6 +29,8 @@ Python是解释性语言，每次运行前不需要编译，所以直接把文�
 负责把结果画出来，用的是NetworkX内的画图API
 4. gml.py<br>
 把结果文件导出成gml格式
+5.draw_graphviz.py<br>
+用graphviz画的图，效果比直接用NetworkX好一点
 ### 数据集
 Data文件夹按照每个数据集一个文件夹，每个文件夹的文件如下：<br>
 - nodes.csv 图上的节点（经过处理）
@@ -35,6 +38,8 @@ Data文件夹按照每个数据集一个文件夹，每个文件夹的文件如�
 - result.txt 算法结果，每行一个社区
 - recode.txt 算法运行过程中目标函数值的记录
 - graph.gml 图的GML文件，导出这个本来要在Netdraw里面画图的，但是找了半天没找到怎么导入自己的社区
+- graph.gv 用graphviz画图过程中导出的文件
+- graph.gv.png 用graphviz画的图
 ### 数据集来源
 - simple<br>
 就是上课的时候的那个简单的样例，用来DEBUG
@@ -48,3 +53,4 @@ Dolphin 数据集是 D.Lusseau 等人使用长达7年的时间观察新西兰Dou
 ## 运行结果样例
 统一社区采用相同颜色，图上的样例是上课的时候的样例<br><br>
 ![Figure_1](./Figure_1.png)
+![graph](Data/simple/graph.gv.png)
